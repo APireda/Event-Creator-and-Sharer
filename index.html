@@ -22,7 +22,7 @@
           formulário de inscrição.</p>
       </header>
       
-      <form action="">
+      <form id="form">
         <fieldset>
           <!-- display flex doesn't work properly with legend right after fieldset-->
           <div class="fieldset-wrapper">
@@ -31,19 +31,19 @@
             <div class="input-wrapper">
               <label for="event-title">Título do evento <span>(mínimo 8 caracteres)</span></label>
   
-              <input type="text" id="event-title" />
+              <input type="text" id="event-title" minlength="8" required/>
             </div>
   
             <div class="input-wrapper">
               <label for="event-link">Link do evento <span>(comece com https//)</span></label>
   
-              <input type="url" id="event-link" />
+              <input type="url" id="event-link" required/>
             </div>
 
             <div class="input-wrapper">
               <label for="event-whatsapp">Whatsapp para contato <span>(somente números)</span></label>
   
-              <input type="number" id="event-whatsapp" />
+              <input type="number" id="event-whatsapp" required/>
             </div>
 
             <div class="input-wrapper">
@@ -55,7 +55,7 @@
             <div class="input-wrapper">
               <label for="event-category">Categoria</label>
 
-              <select id="event-category">
+              <select id="event-category" required>
                 <option value="live">Ao vivo</option>
 
                 <option value="podcast">Podcast</option>
@@ -67,41 +67,28 @@
         </fieldset>
 
         <fieldset>
-          <!-- display flex doesn't work properly with legend right after fieldset-->
+          <!-- display flex doesn't work properly with legend right after fieldset-->     
           <div class="fieldset-wrapper">
             <legend>Privacidade</legend>
-  
+
             <div class="input-wrapper">
               <label for="event-email">E-mail do administrador<span>(digite um e-mail válido)</span></label>
   
-              <input type="email" id="event-email" />
+              <input type="email" id="event-email" required/>
             </div>
 
             <div class="input-wrapper">
               <label for="event-password">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label>
   
-              <input type="password" id="event-password" />
-            </div>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <!-- display flex doesn't work properly with legend right after fieldset-->
-          <div class="fieldset-wrapper">
-            <legend>Privacidade</legend>
-  
-            <div class="input-wrapper">
-              <label for="event-email">E-mail do administrador<span>(digite um e-mail válido)</span></label>
-  
-              <input type="email" id="event-email" />
+              <input type="password" id="event-password" minlength="8" required/>
             </div>
 
-            <div class="input-wrapper">
-              <label for="event-password">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label>
-  
-              <input type="password" id="event-password" />
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="event-private" />
+              
+              <label for="event-private">Evento privado</label>
             </div>
-          </div>
+          </div>   
         </fieldset>
 
         <fieldset>
@@ -113,24 +100,28 @@
               <div class="input-wrapper">
                 <label for="event-date">Data</label>
     
-                <input type="date" id="event-date" />
+                <input type="date" id="event-date" required/>
               </div>
   
               <div class="input-wrapper">
                 <label for="event-begin">Das</span></label>
     
-                <input type="time" id="event-begin" />
+                <input type="time" id="event-begin" required/>
               </div>
 
               <div class="input-wrapper">
                 <label for="event-end">Até</span></label>
     
-                <input type="time" id="event-end" />
+                <input type="time" id="event-end" required/>
               </div>
             </div>
           </div>
         </fieldset>
       </form>
+
+      <footer>
+        <button form="form">Salvar evento</button>
+      </footer>
     </div>
   </body>
 </html>
